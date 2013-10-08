@@ -19,7 +19,7 @@ window.ChartLegend = function(parentId) {
 	titleFontFamily : "'Arial'",
 	titleFontSize : 12,
 	titleFontStyle : 'normal',
-	titleColor : 'rgba(200,0,0,0.9)',
+	titleColor : 'rgba(0,0,0,0.9)',
 	titleBackgroundColor : 'rgba(255,255,255,1)',
 	legendBorder : true,
 	legendBorderColor : 'rgba(128,128,128,0.8)',
