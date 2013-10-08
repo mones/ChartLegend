@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ChartLegend example</title>
+  <script type="text/javascript" src="https://raw.github.com/nnnick/Chart.js/master/Chart.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/mones/ChartLegend/master/ChartLegend.js"></script>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>
+      <canvas id="example" width="450" height="180"></canvas>
+    </td>
+    <td>
+      <!-- vertical style, wrapped to the right of the canvas -->
+      <span id="vertical_legend"></span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <!-- horizontal style, wrapped to the bottom of the canvas -->
+      <span id="horizontal_legend"></span>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+var ctx = document.getElementById("example").getContext("2d");
+var options = {"scaleFontSize": 11};
+var legendOptions = { "squareBorder": false, "titleFontSize": 11 };
+var data = {
+  "datasets": [ 
+    {
+      "fillColor": "rgba(255,0,0,0.1)",  
+      "strokeColor": "rgba(200,0,0,1)",
+      "data": [1,2,3],
+      "title": "Ascending"
+    },
+    {
+      "fillColor": "rgba(255,0,0,0.1)" 
+      "strokeColor": "rgba(0,200,0,1)",
+      "data": [4,3,2],
+      "title": "Descending"
+    }
+  ],
+  "labels": ["One","Two","Three"]
+};
+new Chart(ctx).Bar(data, options);
+new ChartLegend("horizontal_legend").Horizontal(data, legendOptions);
+new ChartLegend("vertical_legend").Vertical(data, legendOptions);
+</script>
+</body>
+</html>
+
